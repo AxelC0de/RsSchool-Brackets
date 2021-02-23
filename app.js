@@ -54,13 +54,13 @@ function check(str, bracketsConfig) {
 	// console.log(evenSplittedConfig);
 	// console.log(oddSplittedConfig);
 
-	if (!evenSplittedConfig.includes(arr[0]) || !oddSplittedConfig.includes(arr[arr[length-1]])) {
+	if (!evenSplittedConfig.includes(arr[0]) || !oddSplittedConfig.includes(arr[arr[length - 1]])) {
 		console.log('false')
 	}
 
 
 
-	
+
 
 	// 2) проверить, включает ли Конфиг Массив
 
@@ -69,6 +69,53 @@ function check(str, bracketsConfig) {
 			console.log('false')
 		}
 	}
+
+
+
+
+	// ========================================
+
+
+	// Решение:
+	// удаляем внутри массива, а не работаем с новым стеком
+	// циклом проходим по Массиву
+	// внутри проходим циклом по Конфигу
+	// если элемент Массива равен элементу Кофига, то
+	// сравниваем следующий элемент Массива со следующим элементом Кофнига, и:
+	// если они равны - то удаляем эти оба элемента в Массиве
+	// если нет - то идем дальше(как идти дальше, continue?)
+
+// deleteBrackets
+	for (let index = 0; index < arr.length; index++) {
+		for (let index = 0; index < splittedConfig.length; index++) {
+			if (arr[index] === splittedConfig[index]) {
+				if (arr[index + 1] === splittedConfig[index + 1] || arr[index - 1] === splittedConfig[index-1]) {
+					arr.splice(index, 1)
+				}
+			}
+
+		}
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
