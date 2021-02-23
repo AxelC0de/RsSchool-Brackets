@@ -29,6 +29,7 @@ function check(str, bracketsConfig) {
 	let splittedConfig = configToString.split(',');
 	// console.log(splittedConfig);
 
+	!!!!!!обьединить массивы все, тогда убрать повторы
 	//  убрать повторы в этом массиве, тогда сравнить
 
 	// 1) убрать повторы
