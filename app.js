@@ -4,32 +4,63 @@ check('([{}])', [['(', ')'], ['[', ']'], ['{', '}']])
 
 
 function check(str, bracketsConfig) {
-	//сделать из поданной строки массив
+	// ===Подготовка===
+
+	//1)  сделать из поданной Строки Массив
 	let arr = str.split('')
 
 
-	// 	1) сделать из Конфига один массив
+	// 2) сделать из Конфига один массив
 
 	let firstPartConfig = bracketsConfig[0];
 	// console.log(firstPartConfig)
 
-	// config.shift()
+	bracketsConfig.shift()
 	let secondPartConfig = bracketsConfig;
 	// console.log(secondPartConfig)
 
 	let joinedConfig = firstPartConfig.concat(secondPartConfig);
 	// console.log(joinedConfig)
 
-	let configToString = bracketsConfig.toString()
+	let configToString = joinedConfig.toString('')
 	// console.log(configToString);
 
 	let splittedConfig = configToString.split(',');
 	// console.log(splittedConfig);
 
+	// ========================================
 
-	// Отсечка:
+	// ===Проверка на ошибки в Массиве:===
 
-	// есть ли мусор ?:
+	// 1) кол - во элементов нечетное ?
+	let isEven = str => {
+		if (arr.length % 2 !== 0) {
+			return false
+		}
+	}
+
+	// 2) является ли первый элемент закрывающей скобкой? =  равняется ли он элементу к конфиге с нечетным номером?
+	// = делаем отдельный массив из четных элементов, включая 0, и проверяем, включает ли полученный массив этот первый элемент(includes)
+	let evenSplittedConfig = [];
+	let oddSplittedConfig = [];
+
+	for (let index = 0; index < splittedConfig.length; index++) {
+		if (index % 2 === 0) {
+			evenSplittedConfig.push(splittedConfig[index])
+		} else {
+			oddSplittedConfig.push(splittedConfig[index])
+		}
+	}
+	// console.log(evenSplittedConfig);
+	// console.log(oddSplittedConfig);
+
+	if (!evenSplittedConfig.includes(arr[0]) || !oddSplittedConfig.includes(arr[arr[length-1]])) {
+		console.log('false')
+	}
+
+
+
+	
 
 	// 2) проверить, включает ли Конфиг Массив
 
