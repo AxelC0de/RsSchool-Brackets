@@ -85,11 +85,11 @@ function check(str, bracketsConfig) {
 	// если они равны - то удаляем эти оба элемента в Массиве
 	// если нет - то идем дальше(как идти дальше, continue?)
 
-// deleteBrackets
+	// deleteBrackets
 	for (let index = 0; index < arr.length; index++) {
 		for (let index = 0; index < splittedConfig.length; index++) {
 			if (arr[index] === splittedConfig[index]) {
-				if (arr[index + 1] === splittedConfig[index + 1] || arr[index - 1] === splittedConfig[index-1]) {
+				if (arr[index + 1] === splittedConfig[index + 1] || arr[index - 1] === splittedConfig[index - 1]) {
 					arr.splice(index, 1)
 				}
 			}
