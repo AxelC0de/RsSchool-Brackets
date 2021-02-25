@@ -10,23 +10,6 @@ function check(str, bracketsConfig) {
 	let arr = str.split('')
 
 
-	// 2) сделать из Конфига один массив
-
-	let firstPartConfig = bracketsConfig[0];
-	// console.log(firstPartConfig)
-
-	bracketsConfig.shift()
-	let secondPartConfig = bracketsConfig;
-	// console.log(secondPartConfig)
-
-	let joinedConfig = firstPartConfig.concat(secondPartConfig);
-	// console.log(joinedConfig)
-
-	let configToString = joinedConfig.toString('')
-	// console.log(configToString);
-
-	let splittedConfig = configToString.split(',');
-	// console.log(splittedConfig);
 
 	// ========================================
 
@@ -71,8 +54,6 @@ function check(str, bracketsConfig) {
 	}
 
 
-
-
 	// ========================================
 
 
@@ -86,16 +67,25 @@ function check(str, bracketsConfig) {
 	// если нет - то идем дальше(как идти дальше, continue?)
 
 	// deleteBrackets
-	for (let index = 0; index < arr.length; index++) {
-		for (let index = 0; index < splittedConfig.length; index++) {
-			if (arr[index] === splittedConfig[index]) {
-				if (arr[index + 1] === splittedConfig[index + 1] || arr[index - 1] === splittedConfig[index - 1]) {
-					arr.splice(index, 1)
-				}
+	// for (let index = 0; index < arr.length; index++) {
+	// 	for (let index = 0; index < splittedConfig.length; index++) {
+	// 		if (arr[index] === splittedConfig[index]) {
+	// 			if (arr[index + 1] === splittedConfig[index + 1] || arr[index - 1] === splittedConfig[index - 1]) {
+	// 				arr.splice(index, 1)
+	// 			}
+	// 		}
+
+	// 	}
+
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < bracketsConfig.length; j++) {
+			if (arr[i] === bracketsConfig[j][0]) {
+
 			}
 
 		}
 
+	}
 
 
 	}
